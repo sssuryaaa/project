@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <div id="leftheader">
+            <div id="home">Home ></div>
+            <div id="dash">Dashboard v2</div>
+        </div>
+        <div id="rightheader">
+            <input id="topsearch" type="search" name="q" placeholder="Search here..." required />
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="contentheader">
+            <div id="contentleftheader">
+                <div>
+                    CNAPP Dashboard
+                </div>
+            </div>
+            <div id="contentrightheader">
+                <div id="addwidget" onclick="unhide(event)">Add Widget +</div>
+                <i id="refreshicon" class="fa-solid fa-arrows-rotate"></i>
+                <i id="doticon" class="fa-solid fa-ellipsis-vertical"></i>
+                <div id="filter">
+                    <i id="clockicon" class="fa-solid fa-clock"></i>
+                    <hr id="line" style="border: 1px solid black; width: 0;">
+                    <div id="filtertext">Last 2 days</div>
+                </div>
+            </div>
+        </div>
+        <div id="actualcontent">
+            <div id="CSPMcontent">
+                <div id="CSPMheader" class="categoryheading">
+                    <div id="CSPMleftheader">
+                        CSPM Executive Dashboard
+                    </div>
+                </div>
+                <div id="CSPMcards" class="cards">
+                    <div class="card specialcard" onclick="pop(event)">
+                        Add Widget +
+                    </div>
+                </div>
+            </div>
+            <div id="CWPPcontent">
+                <div id="CWPPheader" class="categoryheading">
+                    CWPP Dashboard
+                </div>
+                <div id="CWPPcards" class="cards">
+                    <div class="card specialcard" onclick="pop(event)">
+                        Add Widget +
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="hiddenform">
+        <div id="hiddenheader">
+            <div id="lefthiddenheader">
+                Add widget
+            </div>
+            <div id="righthiddenheader" onclick="hide()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div id="info">
+            Personalise your Dashboard by adding the following widgets
+        </div>
+        <div id="tabs">
+            <div class="tab active" onclick="fun(event, 'CSPMcont')">CSPM</div>
+            <div class="tab" onclick="fun(event, 'CWPPcont')">CWPP</div>
+        </div>
+        <div id="CSPMcont" class="tabcontent" >
+            <input type="checkbox" id="option1" name="option1" value="Cloud Account Risk Assessment" checked>
+            <label for="option1">Cloud Account Risk Assessment</label>
+            <br>
+            <input type="checkbox" id="option2" name="option2" value="Cloud Accounts" checked>
+            <label for="option2">Cloud Accounts</label>
+        </div>
+        <div id="CWPPcont" class="tabcontent">
+            <input type="checkbox" id="ption1" name="ption1" value="Cloud Account Risk Assessment" checked>
+            <label for="ption1">Workload Alerts</label>
+            <br>
+            <input type="checkbox" id="ption2" name="ption2" value="Cloud Accounts" checked>
+            <label for="ption2">Top 5 Namespace Specific Alerts</label>
+        </div>
+        <button id="checkbutton" onclick="rendercards(event)">Confirm</button>
+    </div>
+
+    <div id="popup">
+        <div id="popupheader">
+            <div id="popuprightheader">
+                <i id="popupxmark" class="fa-solid fa-xmark" onclick="popout()"></i>
+            </div>
+        </div>
+        <form id="popupform">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" placeholder="Enter title">
+            <br><br>
+            <label for="desc">Description</label>
+            <input type="text" id="desc" name="desc" placeholder="Enter description">
+            <br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

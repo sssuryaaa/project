@@ -1,0 +1,230 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+#leftheader{
+    display: flex;
+    align-items: center;
+}
+#dash{
+    padding-left: 5px;
+    color: blue;
+}
+#rightheader{
+    padding-right: 100px;
+}
+#topsearch{
+    background-color: rgb(245, 245, 245);
+    border: 5px;
+    padding: 5px;
+    width: 500px;
+}
+#content{
+    padding: 10px;
+    background-color: rgb(245, 245, 245);
+}
+#contentheader{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+#contentrightheader{
+    display: flex;
+    align-items: center;
+}
+#contentleftheader{
+    display: flex;
+    align-items: center;
+    font-weight: 20px;
+}
+#addwidget{
+    background-color: white;
+    padding: 5px;
+    
+}
+#addwidget:hover{
+    cursor: pointer;
+}
+#refreshicon{
+    padding: 7px;
+    background-color: white;
+    margin-left: 10px;
+    
+}
+#refreshicon:hover{
+    cursor: pointer;
+}
+#doticon{
+    padding: 7px;
+    background-color: white;
+    margin-left: 10px;
+}
+#doticon:hover{
+    cursor: pointer;
+}
+#filter{
+    display: flex;
+    background-color: white;
+    align-items: center;
+    margin-left: 10px;
+}
+#clockicon{
+    padding: 7px;
+    color: blue;
+}
+#line{
+    height: 15px;
+    color: blue;
+    border-color: blue;
+}
+#filtertext{
+    margin-left: 10px;
+    color: blue;
+    margin-right: 10px;
+}
+#actualcontent{
+    padding: 20px;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    flex-shrink: 0 !important;
+}
+.card{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    height: 200px;
+    background-color: white;
+    margin-left: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.fa-xmark:hover{
+    cursor: pointer;
+}
+.categoryheading{
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+.specialcard{
+    justify-content: center;
+    text-align: center;
+    padding-top: 95px;
+    font-weight: lighter;
+    width: 30%;
+}
+.specialcard:hover{
+    cursor: pointer;
+}
+#hiddenform{
+    height: 100dvh;
+    width: 500px;
+    position: absolute;
+    right: -500px;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+}
+#hiddenheader{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+}
+#righthiddenheader:hover{
+    cursor: pointer;
+}
+#info{
+    padding: 20px;
+}
+#tabs{
+    display: flex;
+    padding: 20px;
+    padding-top: 0px;
+}
+.tab{
+    margin-right: 10px;
+    padding-bottom: 3px;
+}
+.tab:hover{
+    cursor: pointer;
+}
+.tab.active{
+    color: blue;
+    font-weight: bold;
+    border-bottom: 1px solid blue;
+}
+.tabcontent{
+    display: none;
+}
+#checkbutton{
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: rgb(0, 0, 145);
+    color: white;
+    font-weight: bold;
+}
+#checkbutton:hover{
+    cursor: pointer;
+}
+#CSPMcont{
+    padding-left: 20px;
+    display: block;
+}
+#CWPPcont{
+    padding-left: 20px;
+}
+#popup{
+    padding: 10px;
+    position: absolute;
+    width: 500px;
+    left: -500px;
+    top: 130px;
+    border: 1px solid black;
+    background-color: white;
+    height: 250px;
+    color: rgb(0, 0, 135);
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); ;
+    border-radius: 5px;
+}
+#popup input{
+    border: none;
+    background-color: rgb(232, 232, 232);
+    padding: 5px;
+}
+#popup button{
+    background-color: rgb(0, 0, 137);
+    padding: 10px;
+    color: white;
+}
+#popupheader{
+    display: flex;
+    justify-content: right;
+}
+#popupxmark{
+    color: black;
+}
+#popupxmark:hover{
+    cursor: pointer;
+}
+#popupform{
+    padding: 20px;
+}
+#popupform > label{
+    display: inline-block;
+    width: 100px;
+}

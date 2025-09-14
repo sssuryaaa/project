@@ -109,6 +109,7 @@ document.getElementById('popupform').addEventListener('submit', (e) => {
             <input type="checkbox" id="ption${++CWPPcount}" name="ption${CWPPcount}" value=${title} checked>
             <label for=ption${CWPPcount}>${title}</label>`
     }
+    popout();
 });
 
 function closecard(iid){

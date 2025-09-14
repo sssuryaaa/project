@@ -74,42 +74,47 @@ document.getElementById('popupform').addEventListener('submit', (e) => {
     e.preventDefault();
     let title = document.getElementById('title').value;
     let desc = document.getElementById('desc').value;
-    if(e.currentTarget.parentElement.classList.contains('CSPMcards')){
-        let element = document.getElementById('CSPMcards');
-        element.innerHTML = `
-                    <div id="${title}" class="card"> 
-                        <div class="cardheading">
-                        ${title}
+    if(title != ""){
+        if(e.currentTarget.parentElement.classList.contains('CSPMcards')){
+            let element = document.getElementById('CSPMcards');
+            element.innerHTML = `
+                        <div id="${title}" class="card"> 
+                            <div class="cardheading">
+                            ${title}
+                            </div>
+                            <div class="cardxmark">
+                                <i  class="fa-solid fa-xmark" onclick="closecard('${title}')"></i>
+                            </div>
                         </div>
-                        <div class="cardxmark">
-                            <i  class="fa-solid fa-xmark" onclick="closecard('${title}')"></i>
+                    ` + element.innerHTML;
+            let CSPMcont = document.getElementById('CSPMcont');
+            CSPMcont.innerHTML += `<br>
+                <input type="checkbox" id="option${++CSPMcount}" name="option${CSPMcount}" value=${title} checked>
+                <label for=option${CSPMcount}>${title}</label>`
+
+        }
+        else{
+            let element = document.getElementById('CWPPcards');
+            element.innerHTML = `
+                        <div id="${title}" class="card"> 
+                            <div class="cardheading">
+                            ${title}
+                            </div>
+                            <div class="cardxmark">
+                                <i  class="fa-solid fa-xmark" onclick="closecard('${title}')"></i>
+                            </div>
                         </div>
-                    </div>
-                ` + element.innerHTML;
-        let CSPMcont = document.getElementById('CSPMcont');
-        CSPMcont.innerHTML += `<br>
-            <input type="checkbox" id="option${++CSPMcount}" name="option${CSPMcount}" value=${title} checked>
-            <label for=option${CSPMcount}>${title}</label>`
-        
+                    ` + element.innerHTML;
+            let CSPMcont = document.getElementById('CWPPcont');
+            CSPMcont.innerHTML += `<br>
+                <input type="checkbox" id="ption${++CWPPcount}" name="ption${CWPPcount}" value=${title} checked>
+                <label for=ption${CWPPcount}>${title}</label>`
+        }
+        popout();
     }
     else{
-        let element = document.getElementById('CWPPcards');
-        element.innerHTML = `
-                    <div id="${title}" class="card"> 
-                        <div class="cardheading">
-                        ${title}
-                        </div>
-                        <div class="cardxmark">
-                            <i  class="fa-solid fa-xmark" onclick="closecard('${title}')"></i>
-                        </div>
-                    </div>
-                ` + element.innerHTML;
-        let CSPMcont = document.getElementById('CWPPcont');
-        CSPMcont.innerHTML += `<br>
-            <input type="checkbox" id="ption${++CWPPcount}" name="ption${CWPPcount}" value=${title} checked>
-            <label for=ption${CWPPcount}>${title}</label>`
+        alert('Empty title not allowed');
     }
-    popout();
 });
 
 function closecard(iid){

@@ -133,6 +133,10 @@ topsearch.addEventListener('keyup', (e) => {
             items[i].style.display = "none";      
         }
     }
+    let specialCards = document.getElementsByClassName("specialcard");
+    for(let i=0; i<specialCards.length; i++){
+        specialCards[i].style.display = 'flex';
+    }
 });
 
 function rendercards(evt){

@@ -142,4 +142,5 @@ function rendercards(evt){
             card.style.display = 'none';
         }
     }
+    hide();
 }

@@ -89,8 +89,8 @@ document.getElementById('popupform').addEventListener('submit', (e) => {
                     ` + element.innerHTML;
             let CSPMcont = document.getElementById('CSPMcont');
             CSPMcont.innerHTML += `<br>
-                <input type="checkbox" id="option${++CSPMcount}" name="option${CSPMcount}" value=${title} checked>
-                <label for=option${CSPMcount}>${title}</label>`
+                <input type="checkbox" id="option${++CSPMcount}" name="option${CSPMcount}" value=${title} class=${title} checked>
+                <label for=option${CSPMcount}>${title}</label>`;
 
         }
         else{
@@ -107,8 +107,8 @@ document.getElementById('popupform').addEventListener('submit', (e) => {
                     ` + element.innerHTML;
             let CSPMcont = document.getElementById('CWPPcont');
             CSPMcont.innerHTML += `<br>
-                <input type="checkbox" id="ption${++CWPPcount}" name="ption${CWPPcount}" value=${title} checked>
-                <label for=ption${CWPPcount}>${title}</label>`
+                <input type="checkbox" id="ption${++CWPPcount}" name="ption${CWPPcount}" value=${title} class=${title} checked>
+                <label for=ption${CWPPcount}>${title}</label>`;
         }
         popout();
     }
@@ -120,6 +120,24 @@ document.getElementById('popupform').addEventListener('submit', (e) => {
 function closecard(iid){
     let ele = document.getElementById(iid);
     ele.style.display = 'none';
+    if(iid.includes(" ")){
+        let chunks = iid.split(" ");
+        let str = "";
+        for(let i=0; i<chunks.length; i++){
+            if(Number.isInteger(Number(chunks[i]))){
+                continue;
+            }
+            else{
+                str+= '.'+chunks[i];
+            }
+        }
+        let checker = document.querySelector(`#hiddenform ${str}`);
+        checker.checked = false;
+    }
+    else{
+        let checker = document.querySelector(`#hiddenform .${iid}`);
+        checker.checked = false;
+    }
 }
 
 let topsearch = document.getElementById('topsearch');

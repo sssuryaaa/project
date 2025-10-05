@@ -1,6 +1,6 @@
 fetch('data.json')
       .then(response => response.json())
-      .then(data => {
+      .then(data => { 
         let CSPMele = document.getElementById("CSPMcards");
         let CWPPele = document.getElementById("CWPPcards");
         for(let i=0; i<data.length; i++){
@@ -171,3 +171,16 @@ function rendercards(evt){
     }
     hide();
 }
+
+document.body.addEventListener('click', (e) => {
+    const path = e.composedPath();
+    const pathIds = path.map((ele) => {
+        return ele.id;
+    });
+    const hiddenForm  = document.getElementById('hiddenform');
+    const styles = getComputedStyle(hiddenForm);
+    console.log(styles.right);
+    if(!pathIds.includes('hiddenform') && styles.right === '0px'){
+        hide();
+    }
+});

@@ -179,7 +179,6 @@ document.body.addEventListener('click', (e) => {
     });
     const hiddenForm  = document.getElementById('hiddenform');
     const styles = getComputedStyle(hiddenForm);
-    console.log(styles.right);
     if(!pathIds.includes('hiddenform') && styles.right === '0px'){
         hide();
     }
